@@ -44,7 +44,7 @@ SEO: schema `HomeAndConstructionBusiness` на всіх сторінках, `Ser
 **Поки сайт на тестовій адресі, індексацію вимкнено** (`site.indexable: false`): після переїзду на sadovi-mrii.com.ua прибрати й замінити `site.url`.
 
 ## Заявки й хостинг
-- `server/api/lead.post.ts` шле заявки в Telegram-бот (`NUXT_TELEGRAM_BOT_TOKEN`, `NUXT_TELEGRAM_CHAT_ID`). Без них заявка пишеться в лог
+- `server/api/lead.post.ts` шле заявки в Telegram-бот (`NUXT_TELEGRAM_BOT_TOKEN`, `NUXT_TELEGRAM_CHAT_ID`). Без них заявка пишеться в лог. Бот окремий від Процков Буд, підключено 22.10.2026: секрети Worker'а (`wrangler secret`), локально — `.env`. Заявки поки йдуть користувачу (розробнику), не замовнику
 - Хостинг: Cloudflare Worker `sadovi-mrii`, https://sadovi-mrii.makslutskov1.workers.dev (перший деплой 22.10.2026). Деплой вручну: `npm run deploy` (збірка з пресетом `cloudflare_module` + `wrangler deploy`, конфіг `wrangler.jsonc`). Автодеплою з GitHub немає
 - На Windows у PowerShell `npx`/`npm` блокує політика скриптів — запускати як `npx.cmd`/`npm.cmd`
 
