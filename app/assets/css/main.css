@@ -1,2 +1,80 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
+
+@theme static {
+  --font-sans: 'Onest', system-ui, sans-serif;
+  --font-display: 'Geologica', system-ui, sans-serif;
+
+  /* Листя: основний зелений */
+  --color-leaf-50: #f3f8ee;
+  --color-leaf-100: #e3efd8;
+  --color-leaf-200: #c9e2b3;
+  --color-leaf-300: #a7cf86;
+  --color-leaf-400: #82b85d;
+  --color-leaf-500: #63a03f;
+  --color-leaf-600: #4f8a3c;
+  --color-leaf-700: #3d6c30;
+  --color-leaf-800: #33572a;
+  --color-leaf-900: #2b4825;
+  --color-leaf-950: #142811;
+
+  /* Хвоя: зеленкувато-сірий нейтральний, найтемніший — колір тексту */
+  --color-pine-50: #f4f7f2;
+  --color-pine-100: #e6ece2;
+  --color-pine-200: #ccd8c6;
+  --color-pine-300: #a9bca3;
+  --color-pine-400: #819a7c;
+  --color-pine-500: #627d5e;
+  --color-pine-600: #4c6449;
+  --color-pine-700: #3d513b;
+  --color-pine-800: #2a4434;
+  --color-pine-900: #1e3b2c;
+  --color-pine-950: #12251b;
+
+  /* Молоде листя: світлий акцент */
+  --color-sprout: #c9e58a;
+  /* Фон сторінки: м'ятний папір */
+  --color-paper: #f1f6ec;
+}
+
+:root {
+  /* Темніший зелений для кнопок і посилань: білий текст на ньому читається (контраст ~6:1) */
+  --ui-primary: var(--ui-color-primary-700);
+  --ui-bg: var(--color-paper);
+  --ui-text: var(--color-pine-900);
+  --ui-text-highlighted: var(--color-pine-900);
+  --ui-text-muted: var(--color-pine-600);
+  --ui-border: var(--color-pine-200);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-pine-900);
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* Заголовки секцій: світлий Geologica, щільний трекінг */
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(2rem, 1.4rem + 2.4vw, 3rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+
+.section-title strong {
+  font-weight: 600;
+}

@@ -26,3 +26,4 @@ logs
 # Сирі фото й відео від власника (оригінали, у git не кладемо)
 app/images/
 photos/
+.superpowers/
