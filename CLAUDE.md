@@ -45,7 +45,8 @@ SEO: schema `HomeAndConstructionBusiness` на всіх сторінках, `Ser
 
 ## Заявки й хостинг
 - `server/api/lead.post.ts` шле заявки в Telegram-бот (`NUXT_TELEGRAM_BOT_TOKEN`, `NUXT_TELEGRAM_CHAT_ID`). Без них заявка пишеться в лог
-- Хостинг: Cloudflare Workers, безкоштовна адреса `*.workers.dev`
+- Хостинг: Cloudflare Worker `sadovi-mrii`, https://sadovi-mrii.makslutskov1.workers.dev (перший деплой 22.10.2026). Деплой вручну: `npm run deploy` (збірка з пресетом `cloudflare_module` + `wrangler deploy`, конфіг `wrangler.jsonc`). Автодеплою з GitHub немає
+- На Windows у PowerShell `npx`/`npm` блокує політика скриптів — запускати як `npx.cmd`/`npm.cmd`
 
 ## Конкуренти (22.10.2026)
 Топ за «ландшафтний дизайн київ»: noviy-sad.com.ua, vive.com.ua, gardenpark.com.ua, topiar.ua (користувачу найбільше подобається topiar). Ніхто не показує цін на сторінці, майже ні в кого немає месенджерів і справжніх відгуків. Наші переваги: відкритий прайс, підписані роботи, месенджери, окремі сторінки послуг.
