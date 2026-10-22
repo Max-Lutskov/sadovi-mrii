@@ -75,14 +75,10 @@ export default defineNuxtConfig({
   },
 
   site: {
-    // Тимчасова адреса на Cloudflare. Коли замовник викупить sadovi-mrii.com.ua — замінити
-    url: 'https://sadovi-mrii.makslutskov1.workers.dev',
+    url: 'https://sadovi-mrii.com.ua',
     name: 'Садові мрії',
     // Сторінки пререндеряться як папка/index.html, а Cloudflare віддає їх за адресою зі слешем
-    trailingSlash: true,
-    // Поки сайт на тестовій адресі, не індексуємо його: інакше після переїзду на справжній домен
-    // Google бачитиме дві копії. На sadovi-mrii.com.ua прибрати
-    indexable: false
+    trailingSlash: true
   },
 
   sitemap: {

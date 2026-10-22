@@ -10,5 +10,8 @@
     "directory": ".output/public",
     "binding": "ASSETS"
   },
+  // Сайт живе лише на своєму домені: адреса workers.dev вимкнена, щоб Google не бачив другу копію
+  "routes": [{ "pattern": "sadovi-mrii.com.ua", "custom_domain": true }],
+  "workers_dev": false,
   "observability": { "enabled": true }
 }

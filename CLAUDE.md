@@ -4,7 +4,7 @@
 Мова спілкування з користувачем — українська. Мова сайту — лише українська.
 
 ## Навіщо цей сайт
-Старий сайт замовника на Readymag (readymag.website/u1984534458/4193863/) зроблено погано, домен sadovi-mrii.com.ua не продовжено (на 22.10.2026 не резолвиться). Замовник пішов, а новий сайт — вітрина, щоб показати, як має бути. Якщо замовник захоче, він викупить sadovi-mrii.com.ua і сайт переїде туди. Клієнти приходять переважно за рекомендацією, тож сайт має швидко переконати людину, якій порадили компанію: роботи, відкриті ціни, телефон.
+Старий сайт замовника на Readymag (readymag.website/u1984534458/4193863/) зроблено погано, домен sadovi-mrii.com.ua свого часу не продовжили. Замовник пішов, а новий сайт — вітрина, щоб показати, як має бути. 22.10.2026 користувач сам викупив sadovi-mrii.com.ua, сайт переїжджає туди. Клієнти приходять переважно за рекомендацією, тож сайт має швидко переконати людину, якій порадили компанію: роботи, відкриті ціни, телефон.
 
 Проєктне рішення: `docs/superpowers/specs/2026-10-22-sadovi-mrii-site-design.md`.
 
@@ -41,11 +41,11 @@
 
 SEO: schema `HomeAndConstructionBusiness` на всіх сторінках, `Service` з ціною, `BreadcrumbList`, `FAQPage` (`app/utils/schema.ts`). Попит (Ubersuggest, Україна): «ландшафтний дизайн київ» 260/міс, «ландшафтный дизайн киев» 110, «ландшафтний дизайн подвір'я» 590.
 
-**Поки сайт на тестовій адресі, індексацію вимкнено** (`site.indexable: false`): після переїзду на sadovi-mrii.com.ua прибрати й замінити `site.url`.
+`site.url` — https://sadovi-mrii.com.ua, індексація увімкнена (у продакшн-збірці nuxt-site-config ставить її сам).
 
 ## Заявки й хостинг
 - `server/api/lead.post.ts` шле заявки в Telegram-бот (`NUXT_TELEGRAM_BOT_TOKEN`, `NUXT_TELEGRAM_CHAT_ID`). Без них заявка пишеться в лог. Бот окремий від Процков Буд, підключено 22.10.2026: секрети Worker'а (`wrangler secret`), локально — `.env`. Заявки поки йдуть користувачу (розробнику), не замовнику
-- Хостинг: Cloudflare Worker `sadovi-mrii`, https://sadovi-mrii.makslutskov1.workers.dev (перший деплой 22.10.2026). Деплой вручну: `npm run deploy` (збірка з пресетом `cloudflare_module` + `wrangler deploy`, конфіг `wrangler.jsonc`). Автодеплою з GitHub немає
+- Хостинг: Cloudflare Worker `sadovi-mrii` на власному домені sadovi-mrii.com.ua (`routes` з `custom_domain` у `wrangler.jsonc`, домен має бути зоною в Cloudflare). Адресу workers.dev вимкнено (`workers_dev: false`), щоб не було дубля для Google. Деплой вручну: `npm run deploy` (збірка з пресетом `cloudflare_module` + `wrangler deploy`, конфіг `wrangler.jsonc`). Автодеплою з GitHub немає
 - На Windows у PowerShell `npx`/`npm` блокує політика скриптів — запускати як `npx.cmd`/`npm.cmd`
 
 ## Конкуренти (22.10.2026)
