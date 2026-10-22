@@ -45,7 +45,7 @@ SEO: schema `HomeAndConstructionBusiness` на всіх сторінках, `Ser
 
 ## Заявки й хостинг
 - `server/api/lead.post.ts` шле заявки в Telegram-бот (`NUXT_TELEGRAM_BOT_TOKEN`, `NUXT_TELEGRAM_CHAT_ID`). Без них заявка пишеться в лог. Бот окремий від Процков Буд, підключено 22.10.2026: секрети Worker'а (`wrangler secret`), локально — `.env`. Заявки поки йдуть користувачу (розробнику), не замовнику
-- Хостинг: Cloudflare Worker `sadovi-mrii` на власному домені sadovi-mrii.com.ua (`routes` з `custom_domain` у `wrangler.jsonc`, домен має бути зоною в Cloudflare). Адресу workers.dev вимкнено (`workers_dev: false`), щоб не було дубля для Google. Деплой вручну: `npm run deploy` (збірка з пресетом `cloudflare_module` + `wrangler deploy`, конфіг `wrangler.jsonc`). Автодеплою з GitHub немає
+- Хостинг: Cloudflare Worker `sadovi-mrii` на власному домені sadovi-mrii.com.ua (`routes` з `custom_domain` у `wrangler.jsonc`, домен має бути зоною в Cloudflare). Адресу workers.dev вимкнено (`workers_dev: false`), щоб не було дубля для Google. www.sadovi-mrii.com.ua переадресовує (301, зі шляхом) окремий Worker `sadovi-mrii-www` у `redirect-www/`, деплой: `npx.cmd wrangler deploy -c redirect-www/wrangler.jsonc`. Деплой вручну: `npm run deploy` (збірка з пресетом `cloudflare_module` + `wrangler deploy`, конфіг `wrangler.jsonc`). Автодеплою з GitHub немає
 - На Windows у PowerShell `npx`/`npm` блокує політика скриптів — запускати як `npx.cmd`/`npm.cmd`
 
 ## Конкуренти (22.10.2026)

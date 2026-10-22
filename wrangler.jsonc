@@ -10,9 +10,9 @@
     "directory": ".output/public",
     "binding": "ASSETS"
   },
-  // Сайт живе на своєму домені. workers.dev тимчасово увімкнено, поки реєстр .com.ua не делегує домен
-  // на Cloudflare (на 22.10.2026 домен ще не резолвиться); після цього поставити false, щоб Google не бачив другу копію
+  // Сайт живе лише на своєму домені: адреса workers.dev вимкнена, щоб Google не бачив другу копію.
+  // www переадресовує окремий Worker (redirect-www/)
   "routes": [{ "pattern": "sadovi-mrii.com.ua", "custom_domain": true }],
-  "workers_dev": true,
+  "workers_dev": false,
   "observability": { "enabled": true }
 }

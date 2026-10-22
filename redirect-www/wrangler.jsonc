@@ -1,0 +1,10 @@
+// Переадресація www.sadovi-mrii.com.ua → sadovi-mrii.com.ua (301, шлях і параметри зберігаються).
+// Деплой: npx wrangler deploy -c redirect-www/wrangler.jsonc (потрібно лише при зміні цього Worker'а)
+{
+  "$schema": "../node_modules/wrangler/config-schema.json",
+  "name": "sadovi-mrii-www",
+  "main": "index.js",
+  "compatibility_date": "2025-07-15",
+  "routes": [{ "pattern": "www.sadovi-mrii.com.ua", "custom_domain": true }],
+  "workers_dev": false
+}

@@ -27,3 +27,6 @@ logs
 app/images/
 photos/
 .superpowers/
+
+# Тимчасові файли wrangler
+.wrangler
